@@ -8,7 +8,7 @@ Counterfeit products are a major challenge in the manufacturing industry, leadin
 ## Features
 -> **Decentralized Ledger:** Utilizes blockchain to store product data, ensuring that information is secure, transparent, and unalterable.
 
--> **QR Code Verification: ** Generates a unique QR code for each product, based on a hash value, which can be scanned to verify authenticity.
+-> **QR Code Verification:** Generates a unique QR code for each product, based on a hash value, which can be scanned to verify authenticity.
 
 -> **Counterfeit Detection:** Automatically detects counterfeit products by comparing scanned QR codes with blockchain records.\
 
