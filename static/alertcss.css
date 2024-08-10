@@ -1,0 +1,29 @@
+/* From here Alert Message CSS CODE ---------- */
+.salert {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: MediumSpringGreen;
+  color: navy;
+}
+
+.ralert {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: Crimson;
+  color: navy;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: blue;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

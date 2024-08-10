@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>- Login -</title>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="logincss.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='logincss.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='alertcss.css')}}">
+
+<!-- 
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&nbsp; &nbsp; &times;</button>
+        {{ message }}
+      </div>
+    {% endfor %}
+ -->
+<!--ring div starts here-->
+<!-- <div>
+
+{% for message in get_flashed_messages() %}    
+<div class="salert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong> {{ message }} </strong>
+</div>
+{% endfor %}
+
+</div> -->
+
+
+<div class="ring">
+
+
+
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+
+
+    {% for message in get_flashed_messages() %}    
+      <div class="salert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong> {{ message }} </strong>
+      </div>
+    {% endfor %}
+
+
+<!--     <h2>Login</h2>
+
+    <form method="POST" action="">
+    	<div class="inputBx">
+      		<input type="text" name="username" placeholder="Username">
+    	</div>
+    	<br>
+    	<div class="inputBx">
+	      <input type="password" name="password" placeholder="Password">
+	    </div>
+	    <br>
+	    <div class="inputBx">
+	      <input type="submit" value="Sign in">
+	    </div>
+    </form> -->
+    
+    <div>
+      
+          <div class="container" id="loginContainer">
+              <center><h2>Login</h2></center><br>
+              <form id="loginForm">
+                  <div class="inputBx"><input type="text" id="loginUsername" placeholder="Username" name="username" required></div>
+                  <br>
+                  <div class="inputBx"><input type="password" id="loginPassword" placeholder="Password" name="password" required></div>
+                  <br>
+                  <!-- <div class="inputBx"><a style="border: 2px solid white; border-radius: 25px; padding: 12px; color: white; text-align: center; font-size: 25px;" onclick="login">Login</a></div> -->
+                  <div class="inputBx"><input style="text-align: center; background-color: crimson;" type="" onclick="login()" value="Login"></div>
+              </form>
+              <br>
+              <p style="margin-top: 10px; color: white;">Don't have an account? <a class="register-link" href="#" style="color: white;" onclick="showRegister()">Register here</a></p>
+          </div>
+
+          <div class="container" style="display: none;" id="registerContainer">
+              <center><h2>Registration</h2></center><br>
+              <form id="registerForm">
+                  <div class="inputBx"><input type="text" id="regFirstName" placeholder="First Name" required></div>
+                  <br>
+                  <div class="inputBx"><input type="text" id="regLastName" placeholder="Last Name" required></div>
+                  <br>
+                 <div class="inputBx"> <input type="tel" id="regPhoneNumber" placeholder="Phone Number" required></div>
+                  <br>
+                  <div class="inputBx"><input type="text" id="regAddress" placeholder="Address" required></div>
+                  <br>
+                  <div class="inputBx"><input type="email" id="regEmail" placeholder="Email" required></div>
+                  <br>
+                 <div class="inputBx"> <input type="text" id="regUsername" placeholder="Username" required></div>
+                  <br>
+                 <div class="inputBx"> <input type="password" id="regPassword" placeholder="Password" required></div>
+                  <br>
+                  <div class="inputBx"><input style="text-align: center; background-color: crimson;" type="" onclick="register()" value="Register"></div>
+                  <!-- <div class="inputBx"><input type="" onclick="register()" value="Register"></div> -->
+              </form>
+              <p style="margin-top: 10px; color: white;">Don't have an account? <a class="register-link" href="#" style="color: white;" onclick="showLogin()">Login here</a></
+              
+          </div>
+
+    </div>
+
+	    
+<!--     <div class="links">
+      <a href="#">Dont have an Account, Create one</a>
+      
+    </div> -->
+  </div>
+</div>
+<!--ring div ends here-->
+
+
+    <script>
+        function showRegister() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('registerContainer').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('registerContainer').style.display = 'none';
+        }
+
+        function login() {
+            const loginUsername = document.getElementById('loginUsername').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+            const user = existingUsers.find(user => user.username === loginUsername && user.password === loginPassword);
+
+            // if (user) {
+            //     alert('Login successful!');
+            //     window.location.href = 'http://127.0.0.1:5000/tohome';
+            // } else {
+            //     alert('Invalid username or password. Please try again.');
+            // }
+
+            if( loginUsername == "admin"){
+                alert("LOGGING AS ADMIN")
+                window.location.href = 'http://127.0.0.1:5000/admin';
+            }else if (user) {
+                alert('Login successful!');
+                window.location.href = 'http://127.0.0.1:5000/tohome';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        function register() {
+            const regFirstName = document.getElementById('regFirstName').value;
+            const regLastName = document.getElementById('regLastName').value;
+            const regPhoneNumber = document.getElementById('regPhoneNumber').value;
+            const regAddress = document.getElementById('regAddress').value;
+            const regEmail = document.getElementById('regEmail').value;
+            const regUsername = document.getElementById('regUsername').value;
+            const regPassword = document.getElementById('regPassword').value;
+
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+            const userExists = existingUsers.some(user => user.username === regUsername);
+
+            if (userExists) {
+                alert('Username already exists. Please choose a different one.');
+            } else {
+                const newUser = {
+                    firstName: regFirstName,
+                    lastName: regLastName,
+                    phoneNumber: regPhoneNumber,
+                    address: regAddress,
+                    email: regEmail,
+                    username: regUsername,
+                    password: regPassword
+                };
+                existingUsers.push(newUser);
+                localStorage.setItem('users', JSON.stringify(existingUsers));
+                alert('Registration successful!');
+                showLogin();
+            }
+        }
+    </script>
+
+</body>
+</html>

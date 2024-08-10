@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify Your Product</title>
+
+
+</head>
+<body>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='verify.css')}}">
+
+<h1>Blockchain-Product-Verifier</h1>
+<p>&#9679;  Click on the <mark>Verify Button</mark> to verify your Product.</p>
+
+<section class="main">
+
+<!--   <div class="wrap wrap--1">
+    <div class="container container--1">
+      <p>01. Normal</p>
+    </div>
+  </div>
+ -->
+  <div class="wrap wrap--2">
+    <div class="container container--2">
+    	<div>
+    		<form method="POST" action="http://127.0.0.1:5000/verify">
+      			<input class="r1" type="text" name="keyId" value={{keyId}}>
+      			<button class="button" type="submit">Verify</button>
+    		</form>
+    	</div>
+      <p>Verify</p>
+    </div>
+  </div>
+
+  <!-- <div class="wrap wrap--3">
+    <div class="container container--3">
+      <p>03. Normal</p>
+    </div>
+  </div> -->
+
+</section>
+
+<!-- <a href="https://abubakersaeed.netlify.app/designs/d10-parallax-tilt-effect-cards" class="abs-site-link" rel="nofollow noreferrer" target="_blank">abs/designs/d10-parallax-tilt-effect-cards</a> -->
+
+</body>
+</html>

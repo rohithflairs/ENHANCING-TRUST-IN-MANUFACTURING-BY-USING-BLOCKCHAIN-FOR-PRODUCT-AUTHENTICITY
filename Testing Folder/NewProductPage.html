@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar1css.css')}}">
+
+
+
+<nav class="nav">
+  <div class="container">
+    <h1><a href="http://127.0.0.1:5000/tohome"> <b> Blockchain-Product-Verifier </b> </a></h1>
+    <ul>
+      <li><a href="http://127.0.0.1:5000/tohome" class="current"><b>Home</b></a></li>
+      <li><a href="#"><b>About</b></a></li>
+      <li><a href="#"><b>Services</b></a></li>
+      <li><a href="#"><b>Contact</b></a></li>
+      <li><a href="logout"><b>Logout</b></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<link rel="stylesheet" type="text/css" href="NewProductPagecss.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='NewProductPagecss.css')}}">
+
+        <h1 id="title">Adding New Product to the Blockchain</h1>
+        <p id="description">Fill all the details below and register the product</p>
+
+        <form id="survey-form" method="POST" action="http://127.0.0.1:5000/addproduct">
+
+            <label class="form-label" for="brand" id="name-label">Product Brand</label>
+            <input class="user-input" id="name" type="text" name="brand" placeholder="Sony, Apple, etc..." required>
+            <label class="form-label" for="name" id="name-label">Product Name</label>
+            <input class="user-input" id="name" type="text" name="name" placeholder="Charlie" required>
+            <label class="form-label" for="batch" id="name-label">Product Batch Number</label>
+            <input class="user-input" id="name" type="text" name="batch" placeholder="10102" required>
+            <label class="form-label" for="id" id="name-label">Product ID</label>
+            <input class="user-input" id="name" type="text" name="id" placeholder="1234" required>
+            <label class="form-label" for="price" id="name-label">Product Price</label>
+            <input class="user-input" id="name" type="number" name="price" placeholder="9999" required>
+
+            <label class="form-label" for="manfdate" id="name-label">Manufacturing Date</label>
+            <input class="user-input" id="name" type="date" name="manfdate" required>
+
+            <label class="form-label" for="exprydate" id="name-label">Expiring Date</label>
+            <input class="user-input" id="name" type="date" name="exprydate" required>
+
+            <label class="form-label" for="size" id="name-label">Product Size</label>
+            <input class="user-input" id="name" type="text" name="size" placeholder="12" required>
+            <label class="form-label" for="type" id="name-label">Product Type</label>
+            <input class="user-input" id="name" type="text" name="type" placeholder="Furniture, Electronics...." required>
+
+
+<!--             <label class="form-label" for="dropdown">Favorite food?</label>
+            <select id="dropdown" class="user-input">
+                <option class="user-input" disabled selected>Favorite food...</option>
+                <option class="user-input">Pizza</option>
+                <option class="user-input">Nachos</option>
+                <option class="user-input">Salad</option>
+                <option class="user-input">Dessert Cakes</option>
+            </select>
+
+            <label class="form-label">Does your vessel require fulfillment?</label>
+
+            <div class="radio-btn-holder">
+                <input class="user-input radio-btn-input" id="btn-yes" name="food-bool" type="radio" value="radio-btn-yes" placeholder="Yes">
+                <label for="btn-yes" class="radio-btn-label">Yes</label>
+            </div>
+
+            <div class="radio-btn-holder">
+                <input class="user-input radio-btn-input" id="btn-no" name="food-bool" type="radio" value="radio-btn-no" placeholder="No">
+                <label for="btn-no" class="radio-btn-label">No</label>
+            </div>
+
+            <label class="form-label">What do you usually eat daily? <span>multiple selection</span></label>
+
+            <div class="checkbox-holder">
+                <input class="user-input checkbox-input" id="breakfast" name="food-type" type="checkbox" value="food-breakfast" placeholder="Breakfast">
+                <label for="breakfast" class="checkbox-label">Breakfast</label>
+            </div>
+
+            <div class="checkbox-holder">
+                <input class="user-input checkbox-input" id="lunch" name="food-type" type="checkbox" value="food-lunch" placeholder="Lunch">
+                <label for="lunch" class="checkbox-label">Lunch</label>
+            </div>
+
+            <div class="checkbox-holder">
+                <input class="user-input checkbox-input" id="snack" name="food-type" type="checkbox" value="food-snack" placeholder="Snack">
+                <label for="snack" class="checkbox-label">Snack</label>
+            </div>
+
+            <div class="checkbox-holder">
+                <input class="user-input checkbox-input" id="dinner" name="food-type" type="checkbox" value="food-dinner" placeholder="Dinner">
+                <label for="dinner" class="checkbox-label">Dinner</label>
+            </div>
+
+            <div class="checkbox-holder">
+                <input class="user-input checkbox-input" id="dessert" name="food-type" type="checkbox" value="food-dessert" placeholder="Dessert">
+                <label for="dessert" class="checkbox-label">Dessert</label>
+            </div>
+
+            <label class="form-label" for="comment-label">Anything else to add?</label>
+            <textarea class="user-input" id="comment-label" maxlength="600" placeholder="Additional comments here..."></textarea>
+ -->
+            <div class="submit-holder">
+                <button id="submit" type="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    
+
+
+
+<script>
+
+	const nav = document.querySelector(".nav");
+	window.addEventListener("scroll", fixNav);
+
+	function fixNav() {
+	  if (window.scrollY > nav.offsetHeight + 150) {
+	    nav.classList.add("active");
+	  } else {
+	    nav.classList.remove("active");
+	  }
+	}
+
+</script>
+
+</body>
+</html>

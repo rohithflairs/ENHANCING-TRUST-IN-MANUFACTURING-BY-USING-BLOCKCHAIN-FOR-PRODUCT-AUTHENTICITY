@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.bg {
+  background: #000405;
+  // min-height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  color: #fff;
+   font-family: Times New Roman;
+  // font-weight: 900;
+}
+
+.p1 {
+  // font-size: 8vw;
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.fancy {
+  position: relative;
+  white-space: nowrap;
+  &:after {
+    --deco-height: 0.3125em;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--deco-height) * -0.625);
+    height: var(--deco-height);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-size: auto 100%;
+    background-repeat: round;
+    background-position: 0em;
+  }
+}
+
+body {
+
+	background: #000405;
+  font-family: Times New Roman;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+	background: #000405;
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.bot {
+  position: absolute;
+  /*width: 50%;*/
+  bottom: 40px;
+
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #FFF; /* Green */
+  border: none;
+  color: green;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='alertcss.css')}}">
+
+<div> <marquee direction="right" behavior="alternate" style="border:BLACK 2px
+SOLID; color: red; font-weight: bold; background-color: black;"><mark> - - Project Title: BLOCKCHAIN – BASED SYSTEM FOR DETECTING COUNTERFEIT PRODUCTS - - </mark></marquee>
+</div>
+
+<div class="sidenav">
+	<a href="http://127.0.0.1:5000/admin"> <h4 style="color: white;"><u>Admin Panel</u> </h4></a>
+  <hr>
+  <a href="#" onclick="showverify()">Verify Nodes</a>
+  <hr>
+  <a href="#" onclick="showdashboard()">Dashboard</a>
+  <hr>
+  <a href="#" onclick="showqrcodes()">QR Codes</a>
+  <hr>
+  <a href="logout" class="bot">Logout</a>
+</div>
+
+<div class="main bg">
+	<p class="p1"><span class="fancy">Blockchain-Product-Verifier</span></p>
+	<hr>
+
+<!-- {% for message in get_flashed_messages() %}    
+<div class="salert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong> {{ message }} </strong>
+</div>
+{% endfor %} -->
+
+	<div style="padding: 100px;" id="nrml">
+
+{% for message in get_flashed_messages() %}    
+<div class="salert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong> {{ message }} </strong>
+</div>
+{% endfor %}
+
+		<h1 style="font-size: 70px;">Hello! <mark>Admin. </mark></h1>
+		<p style="font-size: 25px">
+    Welcome to the admin page of our platform. As an administrator, you have access to various functionalities to manage and monitor the system.
+		<br><br>
+		<mark><b>&nbspVerify Nodes: </b></mark>
+		 &nbspYou can verify nodes within the system to ensure smooth operation and security.
+		<br><br>
+		<mark><b>&nbspAccess Dashboard: </b></mark>
+		 &nbspExplore the dashboard to get an overview of system statistics, performance metrics, and other important information.
+		<br><br>
+		<mark><b>&nbspQR Codes: </b></mark>
+		 &nbspAccess and manage QR codes stored in the database. You can view, update, or delete QR codes as needed.
+		</p>
+		<br><br><br><br><br><br>
+		<p style="text-align: right; font-size: 25px;"><u>Click on the respective tab to explore available options.</u></p>
+	</div>
+	<div style="padding: 100px; display: none;" id="divverify">
+		<h2>Click on the Verify Button to verify the Nodes in Blockchain.</h2>
+
+<!-- {% for message in get_flashed_messages() %}    
+  {% if message == "All Nodes of Blockchain are valid" %}
+    <div class="salert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; ">&times;</span> 
+      <strong>{{ message }}</strong>
+    </div>
+  {% endif %}
+{% endfor %} -->
+
+    <center>
+    		<a href="http://127.0.0.1:5000/verifyNodes">
+          <button class="button">
+            <b> Verify Blockchain </b>
+          </button>
+        </a>
+    </center>		
+	</div>
+	<div style="padding: 100px;display: none;" id="divdashboard">
+		<!-- <h1>Dashboard area</h1> -->
+    <center>
+      <iframe src="http://127.0.0.1:5000/dashboard" height="500px" width="1300px"></iframe>
+    </center>
+	</div>
+	<div style="padding: 100px; display: none;" id="divqrcodes">
+		<p style="font-size: 30px;">These are the <mark>QR Codes</mark> Stored in the <mark>Database.</mark></p>
+    <center>
+      <iframe src="http://localhost/Fake_product_Detection_Using_Blockchain_Technology/17%2002%202024%20-%20Fake_product_Detection_Using_Blockchain_Technology/Fake_product_Detection_Using_Blockchain_Technology/Code/your_html_page101.html" height="800px" width="1600px"></iframe>
+    </center>
+	</div>
+</div>
+
+
+<script>
+	
+function showverify() {
+            document.getElementById('nrml').style.display = 'none';
+            document.getElementById('divdashboard').style.display = 'none';
+            document.getElementById('divqrcodes').style.display = 'none';
+            document.getElementById('divverify').style.display = 'block';
+        }
+function showdashboard() {
+            document.getElementById('nrml').style.display = 'none';
+            document.getElementById('divverify').style.display = 'none';
+            document.getElementById('divqrcodes').style.display = 'none';
+            document.getElementById('divdashboard').style.display = 'block';
+        }
+function showqrcodes() {
+            document.getElementById('nrml').style.display = 'none';
+            document.getElementById('divverify').style.display = 'none';
+            document.getElementById('divdashboard').style.display = 'none';
+            document.getElementById('divqrcodes').style.display = 'block';
+        }
+
+
+</script>
+   
+</body>
+</html> 

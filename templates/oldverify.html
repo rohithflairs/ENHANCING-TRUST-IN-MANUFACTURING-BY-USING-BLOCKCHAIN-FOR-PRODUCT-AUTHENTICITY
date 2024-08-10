@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MAVTAG</title>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
+<style>
+.button {
+  border: 5px solid red;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <div>
+    Blockchain-Product-Verifier
+  </div>
+  <div>
+    <!-- <form method="POST" action="http://localhost:8080/"> -->
+    <form method="POST" action="http://127.0.0.1:5000/verify">
+      <input type="text" name="keyId" value={{keyId}}>
+      <button class="button" type="submit">Verify</button>
+    </form>
+  </div>
+
+
+  <div>
+    Powered by Blockchain
+  </div>
+</div>
+
+</body>
+</html>

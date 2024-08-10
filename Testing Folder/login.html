@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>- Login -</title>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="logincss.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='logincss.css')}}">
+
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&nbsp; &nbsp; &times;</button>
+        {{ message }}
+      </div>
+    {% endfor %}
+
+<!--ring div starts here-->
+<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <h2>Login</h2>
+
+    <form method="POST" action="">
+    	<div class="inputBx">
+      		<input type="text" name="username" placeholder="Username">
+    	</div>
+    	<br>
+    	<div class="inputBx">
+	      <input type="password" name="password" placeholder="Password">
+	    </div>
+	    <br>
+	    <div class="inputBx">
+	      <input type="submit" value="Sign in">
+	    </div>
+    </form>
+    
+	    
+    <!-- <div class="links">
+      <a href="#">Forget Password</a>
+      <a href="#">Signup</a>
+    </div> -->
+  </div>
+</div>
+<!--ring div ends here-->
+
+</body>
+</html>

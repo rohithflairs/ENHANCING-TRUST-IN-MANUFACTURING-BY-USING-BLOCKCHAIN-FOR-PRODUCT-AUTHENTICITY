@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ADMIN - Product-Verifier</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://www.ibm.com/blogs/blockchain/wp-content/uploads/2019/12/Retina_Display-758591537.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.jumbo {
+  font-size: 6vw;
+}
+.pumbo {
+  font-size: 1.5vw;
+}
+a:hover {
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar1css.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='alertcss.css')}}">
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+
+
+<nav class="nav">
+
+{% for message in get_flashed_messages() %}    
+<div class="salert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong> {{ message }} </strong>
+</div>
+{% endfor %}
+  <div class="container">
+    <h1><a href="http://127.0.0.1:5000/tohome"> <b> Blockchain-Product-Verifier </b> </a></h1>
+    <ul>
+      <li><a href="http://127.0.0.1:5000/tohome" class="current"><b>Home</b></a></li>
+      <li><a href="#"><b>About</b></a></li>
+      <li><a href="#"><b>Services</b></a></li>
+      <li><a href="#"><b>Contact</b></a></li>
+      <li><a href="logout"><b>Logout</b></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!--   <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Blockchain-Product-Verifier
+  </div> -->
+
+  <div class="w3-display-middle" align="center">
+
+
+
+
+    <h1 align="center">Welcome to Blockchain Product Verifier</h1>
+    <h3><a href="http://127.0.0.1:5000/verifyNodes">Verify Blockchain</a></h3>
+    <br>
+    <h3><a href="http://127.0.0.1:5000/tohome">Add a Product into Block Chain</a></h3>
+
+    <!--<h3><a href="http://127.0.0.1:5000/medicine">Add Medicine</a></h3>
+    <h3><a href="http://127.0.0.1:5000/fertilizer">Add Fertilizer</a></h3>
+    <h3><a href="http://127.0.0.1:5000/wine">Add Wine</a></h3> -->
+  
+<!-- Old ALert Code is Below -->
+
+<!--  {% for message in get_flashed_messages() %}
+      {% if message == "All Nodes of Blockchain are valid" %}
+        <div class="alert alert-success">
+      {% else %}
+        <div class="alert alert-danger">
+      {% endif %}
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ message }}
+      </div>
+    {% endfor %} -->
+
+    <br>
+
+    <div>
+      <div id="div1">
+        <h1> This is Division 1 </h1>
+        <a href="#" onclick="showdiv2()">Click here to see Dashboard</a>
+      </div>
+      <div id="div2" style="display: none;">
+        
+        <iframe src="http://127.0.0.1:5000/dashboard" height="500px" width="1500px"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by Blockchain
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+
+function showdiv2() {
+            document.getElementById('div1').style.display = 'none';
+            document.getElementById('div2').style.display = 'block';
+        }
+
+
+  const nav = document.querySelector(".nav");
+  window.addEventListener("scroll", fixNav);
+
+  function fixNav() {
+    if (window.scrollY > nav.offsetHeight + 150) {
+      nav.classList.add("active");
+    } else {
+      nav.classList.remove("active");
+    }
+  }
+
+</script>
+
+</body>
+</html>

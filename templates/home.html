@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+<style>
+	
+blurdiv {
+  border: solid $b rgba(#000, .2);
+  height: 50vmin;
+  max-width: 13em;
+  max-height: 7em;
+  background: url(oranges.jpg) 50%/ cover 
+                border-box /* background-origin */
+                padding-box /* background-clip */;
+}
+
+</style>
+
+</head>
+<body>
+
+<!--=============== FONT AWESOME ===============-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar1css.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='alertcss.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='oldproductzonecss.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='textreveal.css')}}">
+
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='team.css')}}"> -->
+
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet"> -->
+
+
+
+<nav class="nav">
+
+
+
+{% for message in get_flashed_messages() %}    
+<div class="salert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong> {{ message }} </strong>
+</div>
+{% endfor %}
+
+  <div class="container">
+    <h1><a href="http://127.0.0.1:5000/tohome"> <b> Blockchain-Product-Verifier </b> </a></h1>
+    <ul>
+      <li><a href="http://127.0.0.1:5000/tohome" class="current"><b>Home</b></a></li>
+      <li><a href="#about"><b>About</b></a></li>
+      <!-- <li><a href="#"><b>Services</b></a></li> -->
+      <li><a href="#contact"><b>Contact</b></a></li>
+      <li><a href="logout"><b>Logout</b></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="hero">
+
+<div> <marquee direction="right" behavior="alternate" style="border:BLACK 2px
+SOLID; color: red; font-weight: bold; background-color: black;"><mark> - - Project Title: BLOCKCHAIN – BASED SYSTEM FOR DETECTING COUNTERFEIT PRODUCTS - - </mark></marquee>
+</div>
+
+  <div class="container">
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+    <h1 class="reveal-text rp rspan">Securing Product Authenticity</h1>
+    <h2>
+    	<span style="padding-left: 45px; color: yellow;"><b>
+    	Welcome to the future of product verification!
+    	We are committed to verifying product authenticity with state-of-the-art blockchain technology. Secure your brand, bolster consumer faith and decrease counterfeiting by utilizing our advanced system for product identification.</b> 
+    	<a href="#">Learn More</a></blockquote>
+    </h2>
+
+
+
+
+  </div>
+  
+</div>
+
+
+<!-- <h1 class="reveal-text">
+	I'm here.
+</h1>
+ -->
+
+<section class="container content">
+
+<span id="about"></span>
+
+	<br><br><br><br><hr><br>
+
+<div style="background-image: url();">
+	
+<!-- <h1  style="font-size: 50px; color: crimson;"> <b> Abstract </b> </h1> -->
+<p style="text-align: justify; color: navy; "> <b><i>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span style="font-size: 60px;">The</span> <span style="font-size: 50px;">Fake</span> <span style="font-size: 40px;">Product</span> <span style="font-size: 30px;">Identification</span> <span style="font-size: 24px;">System </span>using Blockchain Technology addresses the growing concern of counterfeit products by leveraging the transparency and security offered by blockchain. Counterfeit products pose a significant threat to the manufacturing industry, impacting company reputation, sales, and profits. Addressing this challenge, this project employs Blockchain technology for the identification of genuine products and the detection of counterfeit ones. Blockchain is a decentralized and secure digital ledger that stores transactional information across multiple connected databases in the form of unalterable blocks. Leveraging its security features, Blockchain ensures the integrity of data, preventing unauthorized modifications or hacks.	
+	
+	This project utilizes emerging mobile and wireless technologies, particularly Quick Response (QR) codes, as an effective tool against counterfeiting. A QR code is generated based on Hash Value, and each unique Hash value is assigned to each product, and counterfeit detection is facilitated through QR code scanning. In scanning the QR code each unique hash value gets verified and fake products are identified. This innovative approach empowers customers by eliminating the need for third-party confirmation of product authenticity, enhancing trust in the supply chain and safeguarding against the adverse impacts of counterfeit practices on companies.
+</i>
+</b>
+</p>
+
+</div>
+
+
+	<br><hr><br>
+
+<!-- Process Steps -->
+
+<!-- <div style="border: 2px solid red; border-radius: 10px; padding: 20px; background-image: url(https://i.makeagif.com/media/12-04-2018/IxHq7M.gif); background-size: cover;"> -->
+<div style="background-color: LightSeaGreen; padding: 15px; border-radius: 20px">
+	<div style="background-color: navy; padding: 15px; border-radius: 20px">
+		<div style="background-color: white; padding: 20px; border-radius: 20px">
+<div class="w-full py-8 lg:py-16">
+    <div class="container mx-auto px-8 lg:px-16">
+
+        <!-- 1st Row -->
+        <div class="grid grid-cols-2 gap-4 lg:gap-0 sm:flex mb-0 lg:-mb-4 xl:-mb-7" >
+            <!-- Card 1 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative" >
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#E4A200] flex">
+                        <img class="my-auto h-[100%] m-auto" src="https://cdn-icons-png.flaticon.com/512/3456/3456426.png" loading="lazy" />
+                    </div>
+                    <br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">
+                        1. Manufacturer Registration
+                    </h3>
+                </div>
+            </div>
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="col-span-1 hidden lg:flex rounded-lg p-1 aspect-square">
+                    <img class="my-auto rotate-180" src="https://smartinternz.com/assets/2022/img/8_section/lines/1.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] flex" style="background-color: #dd2c2c;">
+                        <img class="my-auto h-[100%] m-auto" src="https://cdn-icons-png.flaticon.com/512/295/295128.png" loading="lazy" />
+                    </div>
+                    <br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">
+                        2. Manufacturer Login
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="col-span-1 hidden lg:flex rounded-lg p-1 aspect-square">
+                    <img class="my-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/1.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#DD7A00] flex">
+                        <img class="my-auto h-[83%] m-auto" src="https://cdn.iconscout.com/icon/free/png-256/free-registration-complete-1521634-1288248.png" loading="lazy" />                          
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">3. Entering Product Details</h3>
+                </div>
+            </div>
+
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="hidden lg:flex col-span-1 rounded-lg p-1 aspect-square">
+                    <img class="my-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/2.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#0B827B] flex">
+                        <img class="my-auto h-[100%] m-auto" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/cryptographic-hash-2-810993.png?f=webp" loading="lazy" />
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">
+                        4. Generating the Hash Value
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2nd row in Large screens only  -->
+        <div class="hidden lg:grid grid-cols-9 col-span-9">
+            <div class="col-span-1 flex rounded-lg p-1 aspect-square"></div>
+
+            <!-- Card -->
+            <div class="col-span-7 rounded-lg pl-8 flex">
+                <h1 class="m-auto text-white text-4xl font-bold" style="color: crimson;">Excited To Know How It Works?</h1>
+            </div>
+
+            <!-- Card Line -->
+            <div class="col-span-1 flex rounded-lg p-1 aspect-square">
+                <img class="mx-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/4.svg" loading="lazy" />
+            </div>
+        </div>
+
+        <!-- 3rd Row -->
+        <div class="mt-4 lg:mt-0 grid grid-cols-2 gap-4 lg:gap-0 sm:flex flex-row-reverse">
+            <!-- Card 5 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#8A033E] flex">
+                        <img class="my-auto h-[80%] m-auto" src="https://cdn-icons-png.flaticon.com/512/3598/3598242.png" loading="lazy" />
+                        
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">
+                        5. Storing the Hash Value in the Database
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="col-span-1 hidden lg:flex rounded-lg p-1 aspect-square">
+                    <img class="my-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/5.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#D83900] flex">
+                        <img class="my-auto h-[80%] m-auto" src="https://cdn-icons-png.freepik.com/512/1924/1924721.png" loading="lazy" />
+                        
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">6. Embedding the Hash Value with the QR Code</h3>
+                </div>
+            </div>
+
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="col-span-1 hidden lg:flex rounded-lg p-1 aspect-square">
+                    <img class="my-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/6.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#0075D3] flex">
+                        <img class="my-auto h-[9\100%] m-auto" src="https://play-lh.googleusercontent.com/ZVRfBOta30rLNsaSiGFUZU_WPUPKkk3Tzs30bXRq1er-NgxdTndUZS-TFGFEBF8lyx8" loading="lazy" />
+                        
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">7. Generating QR Code</h3>
+                </div>
+            </div>
+
+            <!-- Card Line -->
+            <div class="flex-1 hidden lg:block">
+                <div class="col-span-1 hidden lg:flex rounded-lg p-1 aspect-square">
+                    <img class="my-auto" src="https://smartinternz.com/assets/2022/img/8_section/lines/7.svg" loading="lazy" />
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="col-span-1 flex-1">
+                <div class="col-span-1 bg-white rounded-lg py-4 px-3 aspect-[14/10] flex flex-col space-y-3 relative">
+                    <div class="mr-auto aspect-square rounded-full h-[60%] bg-[#DD7A00] flex">
+                        <img class="my-auto h-[100%] m-auto" src="https://cdn-icons-png.flaticon.com/512/2857/2857448.png" loading="lazy" />
+                        
+                    </div><br>
+                    <h3 class="text-darkBlue text-sm font-semibold my-auto">
+                        8. Storing the QR Code in Database
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+</div>
+		<center><a href="http://127.0.0.1:5000/productzone">
+					<h2>
+						<i class="fa-solid fa-arrow-right"></i> 
+						Lets Create QR Code For A Product 
+						<i class="fa-solid fa-arrow-left"></i>
+						
+					</h2>
+				</a>
+		</center>
+</div>
+</div>
+</div>
+
+
+<!-- Team Code -->
+
+
+
+
+	<br><hr><br><br>
+    <center>
+        <p> <span style="font-size: 60px;"> Our Team </span> </p> <br>
+    <iframe src="team" style="height: 300px; width: 1500px;"></iframe>
+    </center>
+    <br><br><hr>
+
+    <center id="contact">
+        <iframe src="http://localhost/Fake_product_Detection_Using_Blockchain_Technology/17%2002%202024%20-%20Fake_product_Detection_Using_Blockchain_Technology/Fake_product_Detection_Using_Blockchain_Technology/Code/templates/contact%20form/" style="height: 770px; width: 1500px;"></iframe>
+    </center>
+
+
+
+    <!-- <br><hr><br>
+
+    <div class="rc" style="padding: 20px;">
+        <div style="background-color: white; padding: 20px;">
+            <br>
+            <p> <span style="font-size: 60px;"> Contact Us: </span> </p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
+        </div>
+        
+        
+    </div>
+
+    <br><hr>
+
+    <center>
+
+
+    <iframe
+      id="JotFormIFrame-240623119404447"
+      title="Fancy Envelope Contact Form"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/240623119404447"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+
+    >
+
+    </iframe>
+    
+
+    </center> -->
+
+<!--     <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br>
+
+
+	<hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br> -->
+
+
+
+
+<hr>
+
+    <center>
+        <br>
+        <a href="http://127.0.0.1:5000/electronicproduct">
+            <button class="button button1">electronic</button>
+        </a>
+        <br>
+        <a href="http://127.0.0.1:5000/cosmeticproduct">
+            <button class="button button2">cosmetic</button>
+        </a>
+        <br>
+        <a href="http://127.0.0.1:5000/accesoriesproduct">
+            <button class="button button3">accesories</button>
+        </a>
+        <br>
+        <a href="http://127.0.0.1:5000/homeproduct">
+            <button class="button button4">home appliances</button>
+        </a>
+        <br>
+        <a href="http://127.0.0.1:5000/newproduct">
+            <button class="button button5">Add a New Product</button>
+        </a>
+        <br>
+        <a href="http://127.0.0.1:5000/productzone">
+            <button class="button button5">productzone</button>
+        </a>
+        <br>
+        <a href="logout">
+            <button class="button button5">Logout</button>
+        </a>
+        <br>
+    </center>
+
+<hr>
+
+		
+<!-- 
+	<hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br>
+
+
+	<hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br> -->
+
+</section>
+
+<script>
+
+	const nav = document.querySelector(".nav");
+	window.addEventListener("scroll", fixNav);
+
+	function fixNav() {
+	  if (window.scrollY > nav.offsetHeight + 150) {
+	    nav.classList.add("active");
+	  } else {
+	    nav.classList.remove("active");
+	  }
+	}
+
+
+$(".close").click(function() {
+  $(this)
+    .parent(".alert")
+    .fadeOut();
+});
+
+
+
+</script>
+
+<!-- Script for Process explaination -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // This will consider adding css classes found in index.js file
+        tailwind.config = {
+            content: ["https://smartinternz.com/assets/2022/js/index.js"],
+            theme: {
+                extend: {
+                    colors: {
+                        darkBlue: "#052d60",
+                        lightBlue: "#0b5cab",
+                        bgBlue: "#EAF5FE",
+                    },
+                },
+            },
+        };
+    </script>
+
+
+<script type="text/javascript">
+    var ifr = document.getElementById("JotFormIFrame-240623119404447");
+    if (ifr) {
+      var src = ifr.src;
+      var iframeParams = [];
+      if (window.location.href && window.location.href.indexOf("?") > -1) {
+        iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+      }
+      if (src && src.indexOf("?") > -1) {
+        iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+        src = src.substr(0, src.indexOf("?"))
+      }
+      iframeParams.push("isIframeEmbed=1");
+      ifr.src = src + "?" + iframeParams.join('&');
+    }
+    window.handleIFrameMessage = function(e) {
+      if (typeof e.data === 'object') { return; }
+      var args = e.data.split(":");
+      if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+      if (!iframe) { return; }
+      switch (args[0]) {
+        case "scrollIntoView":
+          iframe.scrollIntoView();
+          break;
+        case "setHeight":
+          iframe.style.height = args[1] + "px";
+          if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
+            iframe.style.minHeight = args[1] + "px";
+          }
+          break;
+        case "collapseErrorPage":
+          if (iframe.clientHeight > window.innerHeight) {
+            iframe.style.height = window.innerHeight + "px";
+          }
+          break;
+        case "reloadPage":
+          window.location.reload();
+          break;
+        case "loadScript":
+          if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+          var src = args[1];
+          if (args.length > 3) {
+              src = args[1] + ':' + args[2];
+          }
+          var script = document.createElement('script');
+          script.src = src;
+          script.type = 'text/javascript';
+          document.body.appendChild(script);
+          break;
+        case "exitFullscreen":
+          if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+          else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+          else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+          else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+          else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+          break;
+      }
+      var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+      if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+        var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+        iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+      }
+    };
+    window.isPermitted = function(originUrl, whitelisted_domains) {
+      var url = document.createElement('a');
+      url.href = originUrl;
+      var hostname = url.hostname;
+      var result = false;
+      if( typeof hostname !== 'undefined' ) {
+        whitelisted_domains.forEach(function(element) {
+            if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                result = true;
+            }
+        });
+        return result;
+      }
+    };
+    if (window.addEventListener) {
+      window.addEventListener("message", handleIFrameMessage, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onmessage", handleIFrameMessage);
+    }
+    </script>
+
+</body>
+</html>

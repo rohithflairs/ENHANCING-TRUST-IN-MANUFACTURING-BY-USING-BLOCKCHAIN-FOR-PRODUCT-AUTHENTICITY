@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Codes</title>
+</head>
+<body>
+    
+    <div id="qrcodes"></div>
+
+    <script>
+        // Function to fetch images from the server
+        function fetchImages() {
+            fetch('get_images.php') // Replace with your server-side script
+            .then(response => response.json())
+            .then(data => {
+                const qrcodesDiv = document.getElementById('qrcodes');
+                data.forEach(image => {
+                    const img = document.createElement('img');
+                    img.src = 'QRcodes/' + image; // Assuming images are in the QRcodes folder
+                    img.alt = image;
+                    qrcodesDiv.appendChild(img);
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+        }
+
+        // Call the function to fetch images when the page loads
+        fetchImages();
+    </script>
+</body>
+</html>
